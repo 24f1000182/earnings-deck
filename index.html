@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Quarterly Earnings — Interactive Deck</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="https://unpkg.com/highlight.js/styles/atom-one-light.css">
+
+    <!-- MathJax (for equations) -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Quarterly Earnings Report</h1>
+          <p class="lead">Interactive presentation demonstrating modern capabilities</p>
+          <p style="font-size:0.9rem;margin-top:1.5rem;">Contact: <a href="mailto:24f1000182@ds.study.iitm.ac.in">24f1000182@ds.study.iitm.ac.in</a></p>
+          <aside class="notes">Open with a brief summary; call out key KPIs on the next slides.</aside>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+## Highlights (Markdown)
+
+- Revenue growth: **5.2%** quarter-over-quarter
+- Adjusted operating margin improvement
+- Key drivers: product uptake, subscription renewals
+
+> This slide is written in Markdown to show content flexibility.
+          </textarea>
+          <aside class="notes">Use this slide to narrate the topline items. Pause for questions.</aside>
+        </section>
+
+        <section>
+          <h2>Performance Drivers</h2>
+          <ul>
+            <li class="fragment">Product A adoption (+8% QoQ)</li>
+            <li class="fragment">Enterprise renewals (+12% YoY)</li>
+            <li class="fragment">Cost optimization initiatives</li>
+          </ul>
+          <aside class="notes">Reveal each bullet as you speak; explain causes and impacts.</aside>
+        </section>
+
+        <section>
+          <h2>Code Example — Data Pull</h2>
+          <pre><code class="language-python">import pandas as pd
+
+def fetch_monthly_revenue(csv_path: str) -> pd.DataFrame:
+    df = pd.read_csv(csv_path, parse_dates=['date'])
+    df = df.set_index('date').resample('M').sum()
+    return df
+
+# Usage
+revenue = fetch_monthly_revenue('data/revenue.csv')
+print(revenue.tail())</code></pre>
+          <aside class="notes">Highlight the data pipeline briefly; mention data sources and freshness.</aside>
+        </section>
+
+        <section>
+          <h2>Financial Formulas</h2>
+          <p>Return on Investment (ROI):</p>
+          <p class="fragment">\( ROI = \dfrac{Gain - Cost}{Cost} \)</p>
+
+          <p class="fragment">Net Present Value (NPV):</p>
+          <p class="fragment">\( NPV = \sum_{t=0}^{T} \dfrac{C_t}{(1+r)^t} \)</p>
+          <aside class="notes">Explain ROI first, then show how we discount future cash flows using NPV.</aside>
+        </section>
+
+        <section>
+          <h2>Takeaways</h2>
+          <ol>
+            <li class="fragment">Steady revenue growth with healthy margins</li>
+            <li class="fragment">Investment in retention is paying off</li>
+            <li class="fragment">Next quarter focus: scale Sales Ops</li>
+          </ol>
+          <aside class="notes">Keep this high-level; link back to earlier supporting slides if asked.</aside>
+        </section>
+
+        <section>
+          <h2>Published Presentation</h2>
+          <p>The live presentation will be available on GitHub Pages after you push the changes.</p>
+          <p style="font-size:0.9rem;margin-top:1rem;">Contact: <a href="mailto:24f1000182@ds.study.iitm.ac.in">24f1000182@ds.study.iitm.ac.in</a></p>
+          <aside class="notes">Provide the pages URL and next steps for stakeholders to view the deck.</aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealMath ],
+        slideNumber: true
+      });
+    </script>
+  </body>
+</html>
